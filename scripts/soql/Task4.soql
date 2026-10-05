@@ -1,0 +1,6 @@
+// Create a query that selects the Id and Subject fields from the Case sObject retrieving 
+// only records that have the word "printers" somewhere in the subject. Save your query in 
+// a file called Task4.soql.
+
+SELECT Id
+FROM CASE

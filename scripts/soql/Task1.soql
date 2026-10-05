@@ -1,0 +1,9 @@
+// In Code Builder open the Command Palette and run this script:
+// > SFDX: Create Query in SOQL Builder
+// Create a query that selects the Id, Subject, Status, and IsClosed fields from the Case sObject retrieving only Closed records.
+// Save your query as a file called Task1.soql in the /scripts/soql folder.
+
+SELECT Id, Subject, Status, IsClosed
+FROM Case
+
+

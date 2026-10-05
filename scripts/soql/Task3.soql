@@ -1,0 +1,7 @@
+// Create a query that selects the Id, Subject, Priority, and Product_Category__c fields from the Case sObject 
+// retrieving only Printers product category records that have a High priority. Save your query in a file 
+// called Task3.soql.
+
+SELECT Id
+FROM CASE
+

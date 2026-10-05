@@ -1,0 +1,7 @@
+// Create a query that selects the Id, Subject, and Type fields from the Case sObject 
+// retrieving only records that have no specified type (Type is a nullable field so a Case
+// without a type has a null value). Save your query in a file called Task2.soql.
+
+SELECT Id, Subject, Type
+FROM Case
+WHERE Type = null
