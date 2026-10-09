@@ -1,0 +1,28 @@
+<template>
+    <!-- <h1 class="p">WAZZAAAAPPP</h1> -->
+    <!--//////////////////////////////////////////////////-->
+    <select id="employee" onchange={handleDepartmentChange}>
+        <option value="Business">--Select a Department--</option>
+        <template for:each={departments} for:item="dept">
+            <option key={dept} value={dept}>
+                {dept}
+            </option>
+        </template>
+    </select>
+
+    <br/><br/>
+    
+    <template for:each={filteredEmployees} for:item="employee">
+        <button 
+            key={employee.id} 
+            data-id={employee.id} 
+            onclick={handleButtonClick}>
+            {employee.name}
+        </button>
+    </template>
+
+    <br/><br/>
+
+    <textarea class="details" rows="5" cols="40" style="visibility:hidden">{selectedEmployeeDetails}</textarea>
+    <!--//////////////////////////////////////////////////-->
+</template>

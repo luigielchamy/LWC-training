@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Parent Component" icon-name="custom:custom1">
+        <lightning-button 
+            label="add one :" 
+            onclick={handleIncrement}>
+        </lightning-button>
+
+        <c-child-component counter={parentCounter}></c-child-component>
+    </lightning-card>
+</template>
