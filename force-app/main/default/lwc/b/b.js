@@ -1,7 +1,7 @@
-import { LightningElement,wire,track } from 'lwc';
+import { LightningElement,wire } from 'lwc';
 import {subscribe, MessageContext} from 'lightning/messageService';
 import COMPONENT_COMMUNICATION_CHANNEL from '@salesforce/messageChannel/ComponentCommunicationChannel__c';
-export default class ComponentB extends LightningElement {
+export default class B extends LightningElement {
     receivedMessage='';
     subscription=null;
     @wire(MessageContext) messageContext;

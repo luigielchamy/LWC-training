@@ -6,7 +6,6 @@
     "editor.mouseWheelZoom": true,
     "files.autoSave": "off",
     "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
-    "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
     "salesforcedx-vscode-core.enable-sobject-refresh-on-startup": false,
     "xml.preferences.showSchemaDocumentationType": "none"
 }
