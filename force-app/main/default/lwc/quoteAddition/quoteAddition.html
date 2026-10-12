@@ -1,0 +1,59 @@
+<template>
+    <!-- <h1 class="p">WAZZAAAAPPP</h1> -->
+    <lightning-quick-action-panel header="Create New Quote">
+        <lightning-record-edit-form 
+            object-api-name="Quote" 
+            onsuccess={handleSuccess}
+            onerror={handleError}
+            onsubmit={handleSubmit}>
+            
+            <lightning-messages></lightning-messages>
+
+            <lightning-input-field field-name="Name" required></lightning-input-field>
+            <lightning-input-field field-name="OpportunityId" value={recordId} disabled></lightning-input-field>
+
+            <template if:true={isOfficeOrRetail}>
+                <lightning-input-field field-name="Proposed_Lease_Start__c" required></lightning-input-field>
+                <lightning-input-field field-name="Proposed_End_Date__c" required></lightning-input-field>
+                <lightning-input-field field-name="Payment_Terms__c" required></lightning-input-field>
+                <lightning-input-field field-name="Grace_Period__c" required></lightning-input-field>
+            </template>
+
+            <template if:true={isRetail}>
+                <lightning-input-field field-name="Retail_Sales_Category__c" required></lightning-input-field>
+            </template>
+
+            <template if:true={isLand}>
+                <lightning-input-field 
+                    field-name="Proposed_Lease_Start__c"
+                    required 
+                    onchange={handleLandDateOrDurationChange}>
+                </lightning-input-field>
+                
+                <lightning-input 
+                    type="number" 
+                    label="Proposed Duration (Years)" 
+                    min="30" 
+                    message-when-range-underflow="Minimum duration for Land is 30 years."
+                    required
+                    onchange={handleLandDateOrDurationChange}>
+                </lightning-input>
+
+                <lightning-input-field 
+                    field-name="Proposed_End_Date__c" 
+                    value={calculatedEndDate} 
+                    disabled>
+                </lightning-input-field>
+
+                <lightning-input-field field-name="Rent_Review_Frequency__c" required></lightning-input-field>
+                
+                <lightning-input-field field-name="Payment_Terms__c" value="4" disabled></lightning-input-field>
+            </template>
+
+            <div class="slds-m-top_medium slds-float_right">
+                <lightning-button class="slds-m-around_xx-small" label="Cancel" onclick={handleCancel}></lightning-button>
+                <lightning-button class="slds-m-around_xx-small" type="submit" label="Save" variant="brand"></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-quick-action-panel>
+</template>
