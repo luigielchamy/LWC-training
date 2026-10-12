@@ -1,0 +1,31 @@
+<template>
+    <!-- <h1 class="p">WAZZAAAAPPP</h1> -->
+    <lightning-card title="Account Contacts" icon-name="standard:contact">
+        <div class="slds-var-m-around_medium">
+            <template if:true={contacts.data}>
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <template for:each={contacts.data} for:item="contact">
+                        <div key={contact.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-bottom_small">
+                            <lightning-card title={contact.Name} icon-name="standard:contact">
+                                <div class="slds-card__body slds-card__body_inner">
+                                    <p><strong>First Name:</strong> {contact.FirstName}</p>
+                                    <p><strong>Last Name:</strong> {contact.LastName}</p>
+                                    <p><strong>Email:</strong> {contact.Email}</p>
+                                    <p><strong>Phone:</strong> {contact.Phone}</p>
+                                    <p><strong>Title:</strong> {contact.Title}</p>
+
+                                    <lightning-button 
+                                        label="Delete" 
+                                        variant="destructive"
+                                        data-id={contact.Id} 
+                                        onclick={handleButtonClicked}>
+                                    </lightning-button>
+                                </div>
+                            </lightning-card>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
