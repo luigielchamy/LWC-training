@@ -1,0 +1,15 @@
+.p{
+    margin-left:30%; 
+    margin-right:29%; 
+    color : red;
+    border : 10px solid black;
+    border-color: aqua;
+    border-radius: 100px;
+    font-size : 50px;
+    padding : 1%;
+}
+.p:hover{
+    color : white;
+    background-color: aqua;
+    cursor: default;
+}

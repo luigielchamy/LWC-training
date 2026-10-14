@@ -1,0 +1,66 @@
+<template>
+    <!-- <h1 class="p">WAZZAAAAAPPPP</h1> -->
+    <lightning-card title="Campaign Assignment Wizard" icon-name="standard:campaign">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_medium">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12">
+                    <lightning-input 
+                        label="Campaign Name" 
+                        type="search" 
+                        value={searchName} 
+                        onchange={handleNameChange} 
+                        placeholder="Search by name...">
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12">
+                    <lightning-combobox 
+                        label="Campaign Type" 
+                        value={selectedType} 
+                        options={typeOptions} 
+                        onchange={handleTypeChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12">
+                    <lightning-input 
+                        label="Start Date (Overlap From)" 
+                        type="date" 
+                        value={filterStartDate} 
+                        onchange={handleStartDateChange}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12">
+                    <lightning-input 
+                        label="End Date (Overlap To)" 
+                        type="date" 
+                        value={filterEndDate} 
+                        onchange={handleEndDateChange}>
+                    </lightning-input>
+                </div>
+            </div>
+
+            <div class="slds-m-bottom_small">
+                <span class="slds-badge slds-theme_info">
+                    Selected Campaigns: {selectedCount}
+                </span>
+            </div>
+
+            <div style="height: 300px;">
+                <lightning-datatable
+                    key-field="id"
+                    data={tableData}
+                    columns={columns}
+                    selected-rows={selectedRowKeys}
+                    onrowselection={handleRowSelection}
+                    is-loading={loading}
+                    disabled={disabled}>
+                </lightning-datatable>
+            </div>
+
+            <template if:true={errorMessage}>
+                <div class="slds-text-color_error slds-m-top_small">
+                    {errorMessage}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
