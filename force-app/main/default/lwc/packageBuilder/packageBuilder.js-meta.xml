@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <!-- Make the component visible to the Lightning App Builder -->
+    <isExposed>true</isExposed>
+
+    <!-- Set user-friendly label in the builder sidebar -->
+    <masterLabel>Booking Package Builder</masterLabel>
+    
+    <!-- Define where the component can be dropped -->
+    <targets>
+        <target>lightning__HomePage</target>
+    </targets>
+</LightningComponentBundle>
