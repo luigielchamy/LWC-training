@@ -9,4 +9,10 @@ package.xml
 **/.eslintrc.json
 
 # LWC Jest
+<<<<<<< HEAD
 **/__tests__/**
+=======
+**/__tests__/**
+
+node_modules/
+>>>>>>> 35edaae (t)

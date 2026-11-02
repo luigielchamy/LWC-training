@@ -3,9 +3,16 @@
 # For useful gitignore templates see: https://github.com/github/gitignore
 
 # Salesforce cache
+<<<<<<< HEAD
 .sfdx/
 .localdevserver/
 .sf/
+=======
+.sf/
+.sfdx/
+.localdevserver/
+deploy-options.json
+>>>>>>> 35edaae (t)
 
 # LWC VSCode autocomplete
 **/lwc/jsconfig.json
@@ -20,10 +27,18 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 # Dependency directories and files
 node_modules/
 package.json
 package-lock.json
+=======
+# Dependency directories
+node_modules/
+
+# ApexPMD cache
+.pmdCache
+>>>>>>> 35edaae (t)
 
 # Eslint cache
 .eslintcache
@@ -36,3 +51,14 @@ Thumbs.db
 ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
+<<<<<<< HEAD
+=======
+
+# Local environment variables
+.env
+
+# Python Salesforce Functions
+**/__pycache__/
+**/.venv/
+**/venv/
+>>>>>>> 35edaae (t)

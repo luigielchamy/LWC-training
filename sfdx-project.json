@@ -5,7 +5,14 @@
       "default": true
     }
   ],
+<<<<<<< HEAD
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "65.0"
+=======
+  "name": "Final_Project",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "68.0"
+>>>>>>> 35edaae (t)
 }
